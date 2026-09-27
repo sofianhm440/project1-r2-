@@ -1,0 +1,103 @@
+/* 1. Reset Dasar & Perbaikan Selector Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Agar padding tidak merusak ukuran elemen */
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan/kiri di HP */
+}
+
+/* 2. Bagian Navbar (Menu Atas) */
+.container-navbar {
+    background-color: #686868;
+    width: 100%;
+    /* Dihapus height: 10vh agar tingginya otomatis mengikuti isi menu */
+}
+
+.ul-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    flex-wrap: wrap; /* Supaya kalau layar HP sangat kecil, menunya otomatis turun ke bawah dan tidak bertumpuk */
+    padding: 15px 0; /* Memberi ruang atas bawah pada bar navigasi */
+    margin: 0;
+}
+
+.li-navbar {
+    margin: 5px 10px; /* Memberi jarak aman antar tombol menu */
+}
+
+/* Perbaikan Utama: Mengatur gaya dan posisi teks link di dalam menu */
+.a-navbar {
+    display: inline-block; /* Mengubah link agar bisa diberi padding */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px; /* Ukuran huruf yang pas dan mudah dibaca di layar HP */
+    padding: 8px 16px; /* Memberi ruang di sekeliling teks agar mudah ditekan jari */
+    border-radius: 8px;
+    transition: background-color 0.3s ease; /* Membuat efek transisi saat disentuh/hover menjadi halus */
+}
+
+/* Memindahkan efek hover ke tag link agar lebih responsif saat ditekan */
+.a-navbar:hover {
+    background-color: black;
+}
+
+.container-content {
+    background-color: rgb(150, 134, 134);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Menggunakan min-height agar tinggi fleksibel jika konten memanjang */
+    padding: 20px 0;   /* Memberi jarak atas bawah di layar HP */
+}
+
+.a-content {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 16px; /* Mengecilkan font dari 30px agar teks tidak patah di HP */
+    
+    /* PERBAIKAN UTAMA: Menggunakan % dan max-width */
+    width: 90%;        /* Di HP akan otomatis melebar 90% dari layar */
+    max-width: 450px;  /* Di laptop, lebarnya tidak akan kebablasan (maksimal 450px) */
+    padding: 30px 20px; /* Mengganti height statis dengan padding agar tinggi kartu mengikuti konten */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px; /* Mengecilkan radius dari 80px agar lebih proporsional */
+    
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.img-content {
+    width: 100%;       /* Gambar akan mengikuti lebar pembungkusnya */
+    max-width: 150px;  /* Batas maksimal lebar logo Instagram agar tidak terlalu raksasa */
+    height: auto;      /* Menjaga proporsi gambar agar tidak gepeng (jangan dikunci height: 60%) */
+    margin-bottom: 20px;
+}
+
+.container-footer {
+    min-height: 60px; /* Mengganti height: 10vh agar tingginya pas dan stabil di layar HP */
+    background-color: #686868;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px; /* Memberikan ruang aman agar teks tidak menempel ke pinggir layar */
+}
+
+.footer-h1 {
+    font-size: 16px; /* Mengecilkan dari 40px agar teks memanjang rapi dalam satu baris di HP */
+    color: white;
+    text-align: center;
+    letter-spacing: 1px; /* Opsional: memberi sedikit jarak antar huruf agar estetik */
+}
